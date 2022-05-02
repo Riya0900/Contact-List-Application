@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ContactPage.css'
 
 class ContactPage extends React.Component {
@@ -99,72 +100,80 @@ class ContactPage extends React.Component {
     const { fields, errors } = this.state;
     return (
       <div className='contact_container'>
-        <div className="border">
-        <p className='contact_header'><b>Add Contacts</b></p>
-          <div>
-            <div>
-              <label className='label'>First name: </label>
-              <input
-                type="text"
-                name="first_name"
-                value={fields.first_name}
-                onChange={event => this.handleUserInput(event)}
-                placeholder="First Name"
-              />
-            </div>
-            <div>
-              <span className="text-danger">{errors.first_name}</span>
-            </div>
+        <div>
+          
+          <div style={{display:'flex',padding:'2%'}}>
+            <Link to={'/'}>
+              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaW_0y2_Q6zcvS1IiPKtvCdMOIUm9Q-DS_Bg&usqp=CAU' alt='arrow' style={{height:'7vh',borderRadius:'50px'}}/>
+            </Link>
+            <p className='contact_header'><b>Add Contacts</b></p>
           </div>
+            
+            <div>
+              <div>
+                <label className='label'>First name: </label>
+                <input
+                  type="text"
+                  name="first_name"
+                  value={fields.first_name}
+                  onChange={event => this.handleUserInput(event)}
+                  placeholder="First Name"
+                />
+                <div>
+                  <span className="text-danger">{errors.first_name}</span>
+                </div>
+              </div>
 
-          <div>
-            <div>
-              <label className='label'>Last name: </label>
+              <div>
+                <label className='label'>Last name: </label>
+                <input
+                  type="text"
+                  name="last_name"
+                  value={fields.last_name}
+                  onChange={event => this.handleUserInput(event)}
+                  placeholder="Last Name"
+                /> 
+                <div>
+                  <span className="text-danger">{errors.last_name}</span>
+                </div>
+              </div>
+              
+              <div>
+                <label className='label'>Email: </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={fields.email}
+                  onChange={event => this.handleUserInput(event)}
+                  placeholder="Email Address"
+                />
+                <div>
+                  <span className="text-danger">{errors.email}</span>
+                </div>
+
+              <div>
+              <label className='label'>Picture: </label>
               <input
-                type="text"
-                name="last_name"
-                value={fields.last_name}
+                type="file"
+                name="avatar"
+                value={fields.avatar}
                 onChange={event => this.handleUserInput(event)}
-                placeholder="Last Name"
-              />
+              ></input>
+              <div>
+                <span className="text-danger">{errors.avatar}</span>
+              </div>
             </div>
-            <div>
-              <span className="text-danger">{errors.last_name}</span>
-            </div>
-          </div>
-          <div>
-            <label className='label'>Email: </label>
-            <input
-              type="email"
-              name="email"
-              value={fields.email}
-              onChange={event => this.handleUserInput(event)}
-              placeholder="Email Address"
-            />
-            <div>
-              <span className="text-danger">{errors.email}</span>
+
+              </div>
             </div>
           </div>
-          <div>
-            <label className='label'>Picture: </label>
-            <input
-              type="file"
-              name="avatar"
-              value={fields.avatar}
-              onChange={event => this.handleUserInput(event)}
-            />
-            <div>
-              <span className="text-danger">{errors.avatar}</span>
-            </div>
-          </div>
-        </div>
         <br />
         <button
           type="button"
           className="button"
           onClick={this.handleSubmit}
         >
-          Submit
+          Add Contact
         </button>
       </div>
     );

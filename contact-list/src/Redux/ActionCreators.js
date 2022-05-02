@@ -1,18 +1,18 @@
-export const REMOVE_FROM_WISH = 'REMOVE_FROM_WISH';
-export const ADD_TO_WISH = 'ADD_TO_WISH';
+export const REMOVE_FROM_LIST = 'REMOVE_FROM_LIST';
+export const ADD_TO_LIST = 'ADD_TO_LIST';
 
-const addToWishlist= (id)=>{
+const addToList= (id)=>{
   return{
-      type: ADD_TO_WISH,
+      type: ADD_TO_LIST,
       id
   }
 }
 
-const removeFromWish = (id) => {
+const removeFromList = (id) => {
   return {
-    type: REMOVE_FROM_WISH,
+    type: REMOVE_FROM_LIST,
     id
   }
 }
 
-export {addToWishlist,removeFromWish};
+export {addToList,removeFromList};

@@ -1,4 +1,4 @@
-import { ADD_TO_WISH,REMOVE_FROM_WISH } from './ActionCreators';
+import { ADD_TO_LIST,REMOVE_FROM_LIST } from './ActionCreators';
 
 const initalState ={
     list:[
@@ -43,6 +43,48 @@ const initalState ={
             "first_name":"Tracey",
             "last_name":"Ramos",
             "avatar":"https://reqres.in/img/faces/6-image.jpg"
+        },
+        {
+            "id":7,
+            "email":"liam.bluth@reqres.in",
+            "first_name":"Liam",
+            "last_name":"John",
+            "avatar":"https://reqres.in/img/faces/7-image.jpg"
+        },
+        {
+            "id":8,
+            "email":"janet.weaver@reqres.in",
+            "first_name":"Mason",
+            "last_name":"Robert",
+            "avatar":"https://reqres.in/img/faces/8-image.jpg"
+        },
+        {
+            "id":9,
+            "email":"emma.wong@reqres.in",
+            "first_name":"Ethan",
+            "last_name":"David",
+            "avatar":"https://reqres.in/img/faces/9-image.jpg"
+        },
+        {
+            "id":10,
+            "email":"eve.holt@reqres.in",
+            "first_name":"James",
+            "last_name":"Charles",
+            "avatar":"https://reqres.in/img/faces/10-image.jpg"
+        },
+        {
+            "id":11,
+            "email":"charles.morris@reqres.in",
+            "first_name":"Abigail",
+            "last_name":"Morris",
+            "avatar":"https://reqres.in/img/faces/11-image.jpg"
+        },
+        {
+            "id":12,
+            "email":"tracey.ramos@reqres.in",
+            "first_name":"Sophia",
+            "last_name":"Ava",
+            "avatar":"https://reqres.in/img/faces/12-image.jpg"
         }
     ]
   } 
@@ -51,7 +93,7 @@ const Reducer = (state=initalState,action) => {
 
     switch(action.type){
   
-        case ADD_TO_WISH:
+        case ADD_TO_LIST:
         let selectedItem1 = state.list.find(item=> item.id === action.id)
   
         return{
@@ -59,7 +101,7 @@ const Reducer = (state=initalState,action) => {
             list: [...state.list, selectedItem1],
         }    
 
-        case REMOVE_FROM_WISH:
+        case REMOVE_FROM_LIST:
             let new_items1 = state.list && state.list.filter(item=> action.id !== item.id)
             return{
                 ...state,
